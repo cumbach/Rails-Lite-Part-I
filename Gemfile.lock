@@ -35,6 +35,3 @@ DEPENDENCIES
   activesupport
   rack
   rspec (~> 3.1.0)
-
-BUNDLED WITH
-   1.10.6
