@@ -1,6 +1,7 @@
 require 'rack'
 require_relative '../lib/controller_base'
 require_relative '../lib/router'
+require 'byebug'
 
 
 $cats = [
@@ -26,7 +27,7 @@ end
 
 class Cats2Controller < ControllerBase
   def index
-    render_content($cats.to_s, "text/text")
+    render_content($cats.to_s, "text/html")
   end
 end
 
@@ -39,6 +40,7 @@ end
 app = Proc.new do |env|
   req = Rack::Request.new(env)
   res = Rack::Response.new
+  debugger
   router.run(req, res)
   res.finish
 end
